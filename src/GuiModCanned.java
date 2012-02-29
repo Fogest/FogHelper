@@ -264,7 +264,7 @@ public class GuiModCanned extends GuiScreen {
 	}
 
 	public void chatgo() {
-		mc.getSendQueue().addToSendQueue(new Packet3Chat(chatmessage));
+		mc.thePlayer.sendChatMessage(chatmessage);
 		mc.displayGuiScreen(null);
 		mc.setIngameFocus();
 	}

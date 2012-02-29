@@ -269,9 +269,10 @@ public class GuiMod extends GuiScreen {
 	}
 
 	public void chatgo() {
-		mc.getSendQueue().addToSendQueue(new Packet3Chat(chatmessage));
-		mc.thePlayer  
-				.addChatMessage("The Command Preformed Was: " + chatmessage);
+		mc.thePlayer.sendChatMessage(chatmessage);
+		mc.thePlayer.addChatMessage("The Command Preformed Was: " + chatmessage);
+		mc.displayGuiScreen(null);
+		mc.setIngameFocus();
 	}
 
 	public void updateScreen() {
