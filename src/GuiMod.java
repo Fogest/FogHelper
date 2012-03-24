@@ -99,13 +99,10 @@ public class GuiMod extends GuiScreen {
 		controlList.add(new GuiButton(7, width / 2 + 102, height / 6 + 86, 98,
 				20, (commandButtonName[20])));
 
-		usernameTextField = new GuiTextField(this, fontRenderer,
-				width / 2 + 100, height / 6 + 134, 100, 20, "");
-		usernameTextField.isFocused = false;
+		usernameTextField = new GuiTextField(fontRenderer,width / 2 + 100, height / 6 + 134, 100, 20);
 		usernameTextField.setMaxStringLength(26);
-		var1 = new GuiTextField(this, fontRenderer, width / 2 - 100,
-				height / 6 + 134, 100, 20, "");
-		var1.isFocused = false;
+		var1 = new GuiTextField(fontRenderer, width / 2 - 100,
+				height / 6 + 134, 100, 20);
 		var1.setMaxStringLength(80);
 
 		controlList.add(new GuiButton(23, width / 2 - 200, height / 6 + 110,
@@ -288,8 +285,8 @@ public class GuiMod extends GuiScreen {
 
 	protected void keyTyped(char c, int i) {
 		super.keyTyped(c, i);
-		usernameTextField.textboxKeyTyped(c, i);
-		var1.textboxKeyTyped(c, i);
+		usernameTextField.func_50037_a(c, i);
+		var1.func_50037_a(c, i);
 	}
 
 	public void mouseClicked(int i, int j, int k) {
