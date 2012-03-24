@@ -258,11 +258,11 @@ public class GuiMod extends GuiScreen {
 		player = usernameTextField.getText();
 		var1.updateCursorCounter();
 		var2 = var1.getText();
-		chatmessage.replace("{var1}",var2);
-		chatmessage.replace("{var2}",player);
-		chatmessage.replace("{user}",player);
-		chatmessage.replace("{box1}",var2);
-		chatmessage.replace("{box2",player);
+		chatmessage = chatmessage.replace("{var1}",var2);
+		chatmessage = chatmessage.replace("{var2}",player);
+		chatmessage = chatmessage.replace("{user}",player);
+		chatmessage = chatmessage.replace("{box1}",var2);
+		chatmessage = chatmessage.replace("{box2",player);
 	}
 
 	public void chatgo() {
