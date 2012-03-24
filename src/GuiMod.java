@@ -104,7 +104,8 @@ public class GuiMod extends GuiScreen {
 		var1 = new GuiTextField(fontRenderer, width / 2 - 100,
 				height / 6 + 134, 100, 20);
 		var1.setMaxStringLength(80);
-
+		usernameTextField.setText(player);
+		var1.setText(var2);
 		controlList.add(new GuiButton(23, width / 2 - 200, height / 6 + 110,
 				98, 20, ("Page 1")));
 		controlList.add(new GuiButton(24, width / 2 - 100, height / 6 + 110,
@@ -268,8 +269,6 @@ public class GuiMod extends GuiScreen {
 	public void chatgo() {
 		mc.thePlayer.sendChatMessage(chatmessage);
 		mc.thePlayer.addChatMessage("The Command Preformed Was: " + chatmessage);
-		mc.displayGuiScreen(null);
-		mc.setIngameFocus();
 	}
 
 	public void updateScreen() {
@@ -306,6 +305,11 @@ public class GuiMod extends GuiScreen {
 				0xBB00FF);
 		super.drawScreen(i, j, f);
 	}
+	public void setText()
+	{
+		usernameTextField.setText(player);
+		var1.setText(var2);
+	}
 
 	protected String screenTitle;
 	protected GuiScreen guiScreen;
@@ -314,6 +318,6 @@ public class GuiMod extends GuiScreen {
 	public String chatmessage;
 	private GuiTextField usernameTextField;
 	private GuiTextField var1;
-	public String player;
-	public String var2;
+	public String player = "";
+	public String var2 = "";
 }
