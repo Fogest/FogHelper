@@ -106,15 +106,6 @@ public class GuiMod extends GuiScreen {
 		var1.setMaxStringLength(80);
 		usernameTextField.setText(player);
 		var1.setText(var2);
-		controlList.add(new GuiButton(23, width / 2 - 200, height / 6 + 110,
-				98, 20, ("Page 1")));
-		controlList.add(new GuiButton(24, width / 2 - 100, height / 6 + 110,
-				98, 20, ("Page 2")));
-		controlList.add(new GuiButton(25, width / 2 + 2, height / 6 + 110, 98,
-				20, ("Page 3")));
-		controlList.add(new GuiButton(26, width / 2 + 102, height / 6 + 110,
-				98, 20, ("Page 4")));
-
 	}
 
 	protected void actionPerformed(GuiButton guibutton) {
@@ -230,26 +221,6 @@ public class GuiMod extends GuiScreen {
 		}
 		if (guibutton.id == 22) {
 			chatmessage = commandButtonCommand[16];
-			chatprocess();
-			chatgo();
-		}
-		if (guibutton.id == 23) {
-			chatmessage = "Unused";
-			chatprocess();
-			chatgo();
-		}
-		if (guibutton.id == 24) {
-			chatmessage = "Unused";
-			chatprocess();
-			chatgo();
-		}
-		if (guibutton.id == 25) {
-			chatmessage = "Unused";
-			chatprocess();
-			chatgo();
-		}
-		if (guibutton.id == 26) {
-			chatmessage = "Unused";
 			chatprocess();
 			chatgo();
 		}
