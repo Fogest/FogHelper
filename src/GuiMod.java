@@ -1,5 +1,10 @@
 package net.minecraft.src;
 
+//FogHelper by Fogest
+//Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 2.5 Argentina License
+//April 4th 2012
+//Updated for version 1.2.5 of Minecraft
+
 import java.io.File;
 import java.util.List;
 import org.lwjgl.input.Keyboard;
