@@ -1,21 +1,23 @@
 package net.minecraft.src;
 
-//FogHelper by Fogest
-//Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 2.5 Argentina License
-//April 4th 2012
-//Updated for version 1.2.5 of Minecraft
-
 import java.io.File;
 import java.util.List;
 import org.lwjgl.input.Keyboard;
 import net.minecraft.client.Minecraft;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.Properties;
 
 public class GuiMod extends GuiScreen {
+	mod_fogest_update m = new mod_fogest_update();
+	//m.checkUpdate();
+    
 	Properties p = new Properties();
 	File configDir = new File(Minecraft.getMinecraftDir(), "/config/");
 	File config = new File(configDir, "FogHelperConfig.cfg");
@@ -103,6 +105,9 @@ public class GuiMod extends GuiScreen {
 				20, (commandButtonName[19])));
 		controlList.add(new GuiButton(7, width / 2 + 102, height / 6 + 86, 98,
 				20, (commandButtonName[20])));
+		
+		controlList.add(new GuiButton(23, width / 2 - 200, height / 6 + 110, 198,
+				20, "Check for Updates!"));
 
 		usernameTextField = new GuiTextField(fontRenderer,width / 2 + 100, height / 6 + 134, 100, 20);
 		usernameTextField.setMaxStringLength(26);
@@ -229,6 +234,14 @@ public class GuiMod extends GuiScreen {
 			chatprocess();
 			chatgo();
 		}
+		if (guibutton.id == 23) {
+			try {
+				m.checkUpdate();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 	public void chatprocess(){
 		usernameTextField.updateCursorCounter();
@@ -279,6 +292,8 @@ public class GuiMod extends GuiScreen {
 				0x0091FF);
 		drawString(fontRenderer, text2, width / 2 + 15, height / 6 + 140,
 				0xBB00FF);
+		drawString(fontRenderer, m.getVersion(), width / 2 + 2, height / 6 + 116,
+				0xff0000);
 		super.drawScreen(i, j, f);
 	}
 	public void setText()
